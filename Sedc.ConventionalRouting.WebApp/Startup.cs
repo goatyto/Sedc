@@ -57,7 +57,7 @@ namespace Sedc.ConventionalRouting.WebApp
             {
                 routes.MapRoute(
                     name: "pizza",
-                    template: "pizzas/{action=Menu}",
+                    template: "catalogue/pizzas/{action=Menu}/{id?}",
                     defaults: new { controller = "Pizza" }
                 );
 

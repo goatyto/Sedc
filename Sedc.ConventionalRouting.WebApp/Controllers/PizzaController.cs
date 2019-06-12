@@ -17,5 +17,10 @@ namespace Sedc.ConventionalRouting.WebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult FindPizzaById(int id)
+        {
+            return View(id);
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Sedc.AttributeRouting.WebApp.Controllers
 {
-    [Route("pizzas")]
+    [Route("catalogue/pizzas")]
     public class PizzaController : Controller
     {
         [Route("menu", Name = "menu")]
@@ -15,6 +15,12 @@ namespace Sedc.AttributeRouting.WebApp.Controllers
         public IActionResult Offers()
         {
             return View();
+        }
+
+        [Route("findPizza/{id}", Name = "findPizza")]
+        public IActionResult FindPizzaById(int id)
+        {
+            return View(id);
         }
     }
 }
