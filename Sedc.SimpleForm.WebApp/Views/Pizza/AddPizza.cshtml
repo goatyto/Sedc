@@ -1,9 +1,18 @@
 ﻿@model Pizza
 @{
     ViewData["Title"] = "AddPizza";
+
+    var pizzaStyles = new SelectList(new[]
+    {
+        "Neapolitan",
+        "New Heaven",
+        "Grandma Style",
+        "New York Style",
+        "Pan Style",
+    });
 }
 
-<h2>AddPizza</h2>
+<h2>Add Pizza</h2>
 <form asp-action="AddPizza" method="post">
     <div>
         <div>
@@ -18,7 +27,7 @@
 
         <div>
             <label asp-for="Style"></label>
-            <select asp-for="Style" asp-items="ViewBag.PizzaStyles"></select>
+            <select asp-for="Style" asp-items="pizzaStyles"></select>
         </div>
 
         <div>
