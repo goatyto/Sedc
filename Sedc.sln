@@ -19,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sedc.ConventionalRouting.We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Navigation", "04 - Navigation", "{3868ABC8-465E-456F-AB53-EF8A9C77C255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sedc.AttributeRouting.WebApp", "Sedc.AttributeRouting.WebApp\Sedc.AttributeRouting.WebApp.csproj", "{AC7861C2-54DA-4830-94A1-9E444F06FB82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sedc.AttributeRouting.WebApp", "Sedc.AttributeRouting.WebApp\Sedc.AttributeRouting.WebApp.csproj", "{AC7861C2-54DA-4830-94A1-9E444F06FB82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Intro", "00 - Intro", "{4385048D-49D9-4ABB-A5B8-2E8A82AB679F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - UI and Forms", "05 - UI and Forms", "{40BFE789-85A7-4FF9-8A75-799FCC903BC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sedc.SimpleForm.WebApp", "Sedc.SimpleForm.WebApp\Sedc.SimpleForm.WebApp.csproj", "{A9C5D111-8190-4C20-9351-DBAA26BC23D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{AC7861C2-54DA-4830-94A1-9E444F06FB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7861C2-54DA-4830-94A1-9E444F06FB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7861C2-54DA-4830-94A1-9E444F06FB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C5D111-8190-4C20-9351-DBAA26BC23D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C5D111-8190-4C20-9351-DBAA26BC23D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C5D111-8190-4C20-9351-DBAA26BC23D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C5D111-8190-4C20-9351-DBAA26BC23D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +66,8 @@ Global
 		{3868ABC8-465E-456F-AB53-EF8A9C77C255} = {E85EAA52-4742-410D-999C-29C2418D5BA0}
 		{AC7861C2-54DA-4830-94A1-9E444F06FB82} = {3868ABC8-465E-456F-AB53-EF8A9C77C255}
 		{4385048D-49D9-4ABB-A5B8-2E8A82AB679F} = {E85EAA52-4742-410D-999C-29C2418D5BA0}
+		{40BFE789-85A7-4FF9-8A75-799FCC903BC7} = {E85EAA52-4742-410D-999C-29C2418D5BA0}
+		{A9C5D111-8190-4C20-9351-DBAA26BC23D3} = {40BFE789-85A7-4FF9-8A75-799FCC903BC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {658F3FFD-723C-4213-BE9D-7FD69B006455}
