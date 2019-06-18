@@ -29,20 +29,7 @@ else
     <ul>
         @foreach (var todo in Model)
         {
-            <li>
-                <div>
-                    <span>Title:&nbsp;</span>
-                    <span>@todo.Title</span>
-                </div>
-                <div>
-                    <span>Description:&nbsp;</span>
-                    <span>@todo.Description</span>
-                </div>
-                <div>
-                    <span>Due date:&nbsp;</span>
-                    <span>@todo.DueDate</span>
-                </div>
-            </li>
+            <partial name="_Todo" model="todo" />
         }
     </ul>
 }

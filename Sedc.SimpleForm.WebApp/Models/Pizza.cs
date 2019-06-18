@@ -16,6 +16,6 @@ namespace Sedc.SimpleForm.WebApp.Models
         public bool IsFasting { get; set; }
         public bool IsHalal { get; set; }
         public bool IsKosher { get; set; }
-        public double Price { get; set; }
+        public double? Price { get; set; }
     }
 }

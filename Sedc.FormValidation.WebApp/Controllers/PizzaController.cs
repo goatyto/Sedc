@@ -14,13 +14,13 @@ namespace Sedc.FormValidation.WebApp.Controllers
         [HttpPost]
         public IActionResult AddPizza(Pizza pizza)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                ViewBag.Message = $"Successfully added {pizza.Name}";
-                return View(new Pizza());
+                return View(pizza);
             }
 
-            return View(pizza);
+            ViewBag.Message = $"Successfully added {pizza.Name}";
+            return View(new Pizza());
         }
     }
 }
