@@ -21,18 +21,23 @@ namespace Sedc.Todo02Initial.WebApp.Data
             return _todoList.Where(x => filter == null || filter.Compile()(x)).ToList();
         }
 
+        public Todo FindById(Guid id)
+        {
+            return _todoList.FirstOrDefault(x => x.Id == id);
+        }
+
         public void Save(Todo todo)
         {
-            if (_todoList.Any(x => x.Title == todo.Title))
-                _todoList[_todoList.FindIndex(x => x.Title == todo.Title)] = todo;
+            if (_todoList.Any(x => x.Id == todo.Id))
+                _todoList[_todoList.FindIndex(x => x.Id == todo.Id)] = todo;
             else
                 _todoList.Add(todo);
         }
 
-        public void Delete(Todo todo)
+        public void DeleteById(Guid id)
         {
-            if (_todoList.Any(x => x.Title == todo.Title))
-                _todoList.RemoveAt(_todoList.FindIndex(x => x.Title == todo.Title));
+            if (_todoList.Any(x => x.Id == id))
+                _todoList.RemoveAt(_todoList.FindIndex(x => x.Id == id));
         }
     }
 }

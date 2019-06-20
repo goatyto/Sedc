@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sedc.Todo02Solution.WebApp.Data;
 
 namespace Sedc.Todo02Solution.WebApp
 {
@@ -28,6 +29,8 @@ namespace Sedc.Todo02Solution.WebApp
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSingleton<Storage>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
