@@ -24,7 +24,6 @@
     <ProjectReference Include="..\Sedc.OnionArchitecture.Entities\Sedc.OnionArchitecture.Entities.csproj" />
     <ProjectReference Include="..\Sedc.OnionArchitecture.Repositories\Sedc.OnionArchitecture.Repositories.csproj" />
     <ProjectReference Include="..\Sedc.OnionArchitecture.Services\Sedc.OnionArchitecture.Services.csproj" />
-    <ProjectReference Include="..\Sedc.OnionArchitecture.WebApp\Sedc.OnionArchitecture.WebApp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
