@@ -14,7 +14,19 @@ namespace Sedc.OnionArchitecture.UnitTests
         public void ShouldReturnAllStudents()
         {
             var mockRepo = new Mock<IGenericRepository>();
-            mockRepo.Setup(repo => repo.GetAll<Student>(null)).Returns(new List<Student>
+            mockRepo.Setup(repo => repo.GetAll<Student>(null)).Returns(GenerateMockStudents());
+
+            var studentsService = new StudentServiceWithGenericRepository(mockRepo.Object);
+
+            var result = studentsService.GetAll();
+
+            Assert.NotEmpty(result);
+            Assert.Equal(8, result.Count);
+        }
+
+        private ICollection<Student> GenerateMockStudents()
+        {
+            return new List<Student>
             {
                 new Student
                 {
@@ -45,14 +57,7 @@ namespace Sedc.OnionArchitecture.UnitTests
                 {
                     FirstMidName = "Nino", LastName = "Olivetto", EnrollmentDate = DateTime.Parse("2005-09-01")
                 }
-            });
-
-            var studentsService = new StudentServiceWithGenericRepository(mockRepo.Object);
-
-            var result = studentsService.GetAll();
-
-            Assert.NotEmpty(result);
-            Assert.Equal(8, result.Count);
+            };
         }
     }
 }
