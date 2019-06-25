@@ -10,9 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Sedc.EntityFramework.WebApp.Data;
+using Sedc.OnionArchitecture.Entities;
+using Sedc.OnionArchitecture.Repositories;
+using Sedc.OnionArchitecture.Repositories.Interfaces;
+using Sedc.OnionArchitecture.Services;
+using Sedc.OnionArchitecture.Services.Interfaces;
 
-namespace Sedc.EntityFramework.WebApp
+namespace Sedc.OnionArchitecture.WebApp
 {
     public class Startup
     {
@@ -36,8 +40,16 @@ namespace Sedc.EntityFramework.WebApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<SchoolContext>(options =>
-                options.UseInMemoryDatabase("Test"));
+            services.AddDbContext<DbContext, SchoolContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // repositories
+            services.AddScoped<IRepository<Student>, Repository<Student>>();
+            services.AddScoped<IGenericRepository, GenericRepository>();
+
+            // services
+            services.AddScoped<IStudentService, StudentServiceWithRepository>();
+            //services.AddScoped<IStudentService, StudentServiceWithGenericRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +73,7 @@ namespace Sedc.EntityFramework.WebApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Student}/{action=Index}/{id?}");
             });
         }
     }
